@@ -1,0 +1,7 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/2019011211011HangjenChan/project_3/project_3.srcs/sources_1/new/digitaltube.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module digitaltube
+WARNING: [VRFC 10-1315] redeclaration of ansi port seg is not allowed [F:/2019011211011HangjenChan/project_3/project_3.srcs/sources_1/new/digitaltube.v:27]
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/2019011211011HangjenChan/project_3/project_3.srcs/sim_1/new/Sim_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sim_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/2019011211011HangjenChan/project_3/project_3.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
