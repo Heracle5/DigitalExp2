@@ -1,2 +1,2 @@
-# DigitalExp2
-The repo includes the project of the course digital system experiment[fpga part] 
+# Exp_0
+For Testing
