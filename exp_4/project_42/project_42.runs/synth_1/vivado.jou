@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Thu Nov 18 16:51:54 2021
+# Process ID: 11448
+# Current directory: F:/2019011211011/project_42/project_42.runs/synth_1
+# Command line: vivado.exe -log dyna_test.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source dyna_test.tcl
+# Log file: F:/2019011211011/project_42/project_42.runs/synth_1/dyna_test.vds
+# Journal file: F:/2019011211011/project_42/project_42.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source dyna_test.tcl -notrace
