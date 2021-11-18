@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a35tftg256-1" LaunchTime="1635414213">
+  <File Type="PWROPT-DCP" Name="proj_1_pwropt.dcp"/>
+  <File Type="ROUTE-PWR" Name="proj_1_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="proj_1.tcl"/>
+  <File Type="ROUTE-PWR-SUM" Name="proj_1_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="proj_1_reports.tcl"/>
+  <File Type="BG-DRC" Name="proj_1.drc"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="proj_1_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="proj_1_timing_summary_init.rpt"/>
+  <File Type="OPT-HWDEF" Name="proj_1.hwdef"/>
+  <File Type="OPT-DCP" Name="proj_1_opt.dcp"/>
+  <File Type="OPT-DRC" Name="proj_1_drc_opted.rpt"/>
+  <File Type="OPT-TIMING" Name="proj_1_timing_summary_opted.rpt"/>
+  <File Type="PWROPT-DRC" Name="proj_1_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="proj_1_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="proj_1_placed.dcp"/>
+  <File Type="PLACE-IO" Name="proj_1_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="proj_1_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="proj_1_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="proj_1_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="proj_1_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="proj_1_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="proj_1_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="proj_1_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="proj_1_postplace_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="proj_1_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="proj_1_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="proj_1_drc_physopted.rpt"/>
+  <File Type="BG-BIT" Name="proj_1.bit"/>
+  <File Type="PHYSOPT-TIMING" Name="proj_1_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="proj_1_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="proj_1_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="proj_1_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="proj_1_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="proj_1_drc_routed.pb"/>
+  <File Type="BITSTR-MSK" Name="proj_1.msk"/>
+  <File Type="ROUTE-DRC-RPX" Name="proj_1_drc_routed.rpx"/>
+  <File Type="BG-BGN" Name="proj_1.bgn"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="proj_1_methodology_drc_routed.rpt"/>
+  <File Type="BITSTR-RBT" Name="proj_1.rbt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="proj_1_methodology_drc_routed.rpx"/>
+  <File Type="BG-BIN" Name="proj_1.bin"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="proj_1_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="proj_1_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="proj_1_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="proj_1_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="proj_1_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="proj_1_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="proj_1_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="proj_1_incremental_reuse_routed.rpt"/>
+  <File Type="RDI-RDI" Name="proj_1.vdi"/>
+  <File Type="ROUTE-CLK" Name="proj_1_clock_utilization_routed.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="proj_1_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="proj_1_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="proj_1_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="proj_1_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="proj_1_timing_summary_postroute_physopted.rpx"/>
+  <File Type="BITSTR-NKY" Name="proj_1.nky"/>
+  <File Type="BITSTR-BMM" Name="proj_1_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="proj_1.mmi"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="proj_1.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="proj_1.sysdef"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/proj_1.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="proj_1"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_2">
+    <File Path="$PSRCDIR/constrs_2/new/ucf_1.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_2/new/ucf_1.xdc"/>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>

@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Fri Nov  5 20:59:48 2021
+# Process ID: 10708
+# Current directory: F:/2019011211011HangjenChan/project_1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10172 F:\2019011211011HangjenChan\project_1\project_1.xpr
+# Log file: F:/2019011211011HangjenChan/project_1/vivado.log
+# Journal file: F:/2019011211011HangjenChan/project_1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project F:/2019011211011HangjenChan/project_1/project_1.xpr
+update_compile_order -fileset sources_1
