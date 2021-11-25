@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Thu Nov 25 16:53:02 2021
+# Process ID: 8040
+# Current directory: F:/2019011211011HangjenChan/project_6/project_6.runs/impl_1
+# Command line: vivado.exe -log key_deboucing.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source key_deboucing.tcl -notrace
+# Log file: F:/2019011211011HangjenChan/project_6/project_6.runs/impl_1/key_deboucing.vdi
+# Journal file: F:/2019011211011HangjenChan/project_6/project_6.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source key_deboucing.tcl -notrace
