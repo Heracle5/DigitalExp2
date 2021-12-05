@@ -10,7 +10,11 @@ output down_inside
 reg[15:0] btn=0;
 always@(posedge clk_scan) 
 begin
-    if (col == 0) begin
-        up_outside <= 1;
-        down_outside <= 1;
-        up_inside <= 0;
+    if (row[3:0] == 4'b1000) begin
+        row[3:0] = 4'b0001;
+    end
+    else
+    begin
+        row[3:0] = row[3:0] + 1'b1;
+    end
+end
