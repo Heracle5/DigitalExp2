@@ -18,3 +18,26 @@ begin
         row[3:0] = row[3:0] + 1'b1;
     end
 end
+always@(posedge clk_scan)
+begin
+  case(row[3:0])
+    4'b0001: 
+    begin
+    btn[3:0] = col;
+    end
+    4'b0010:
+    begin
+    btn[7:4] = col;
+    end
+    4'b0100:
+    begin
+    btn[11:8] = col;
+    end
+    4'b1000:
+    begin
+    btn[15:12] = col;
+    end
+default:
+    btn = 0;
+  endcase
+end
