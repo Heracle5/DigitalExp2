@@ -34,6 +34,14 @@ ajxd ajxd2(
   .btn_in(btn[1]),
   .btn_out(down),
 );
-
-
+ajxd ajxd3(
+  .btn_clk(clk),
+  .btn_in(btn[2]),
+  .btn_out(toOne),
+);
+ajxd ajxd4(
+  .btn_clk(clk),
+  .btn_in(btn[3]),
+  .btn_out(toTwo),
+);
 endmodule
