@@ -1,43 +1,16 @@
 module key_scanning(input[3:0] col,
-input clk_scan,
-input clk_50,
-output reg[3:0] row=4'b0001,
-output up_outside,
-output down_outside,
-output up_inside,
-output down_inside
+input clk,
+output reg[3:0] btn,
+output reg[3:0] row
 );
-reg[15:0] btn=0;
-always@(posedge clk_scan) 
+assign row[3:0]=0001;
+always@(posedge clk)
 begin
-    if (row[3:0] == 4'b1000) begin
-        row[3:0] = 4'b0001;
-    end
-    else
-    begin
-        row[3:0] = row[3:0] + 1'b1;
-    end
+case(col[3:0])
+  4'b0001:btn[3:0]=0001;
+  4'b0010:btn[3:0]=0010;
+  4'b0100:btn3:0]=0100;
+  4'b1000:btn[3:0]=1000;
+endcase
 end
-always@(posedge clk_scan)
-begin
-  case(row[3:0])
-    4'b0001: 
-    begin
-    btn[3:0] = col;
-    end
-    4'b0010:
-    begin
-    btn[7:4] = col;
-    end
-    4'b0100:
-    begin
-    btn[11:8] = col;
-    end
-    4'b1000:
-    begin
-    btn[15:12] = col;
-    end
-default:
-    btn = 0;
-  endcase
-end
+endmodule
