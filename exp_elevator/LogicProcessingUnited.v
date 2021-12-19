@@ -3,7 +3,6 @@ input up,
 input down,
 input toOne,
 input toTwo,
-input clk_0.25hz,
 input clk_50mhz,
 input rst,
 input start_stop
