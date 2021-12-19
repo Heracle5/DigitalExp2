@@ -1,3 +1,25 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 2021/12/19 23:32:27
+// Design Name: 
+// Module Name: LogicProcessingUnited
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
 module LogicProcessingUnited(
 input up,
 input down,
@@ -5,13 +27,13 @@ input toOne,
 input toTwo,
 input clk_50mhz,
 input rst,
-input start_stop
+input start_stop,
 output reg [3:0] led_drive,
 output reg [1:0] state,
 output reg [1:0] floor
 );
 reg [31:0] cnt=0;
-always@(*)
+always@(posedge clk_50mhz)
 begin
 if(!rst)
 begin
@@ -37,7 +59,6 @@ begin
             state=0;//00000010
             led_drive=0;
         end
-        else
         else
         begin
             cnt=cnt+1;
