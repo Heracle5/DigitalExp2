@@ -22,3 +22,5 @@ ajxd ajxd2(.btn_clk(clk),.btn_in(btn[1]),.btn_out(down));
 ajxd ajxd3(.btn_clk(clk),.btn_in(btn[2]),.btn_out(toOne));
 ajxd ajxd4(.btn_clk(clk),.btn_in(btn[3]),.btn_out(toTwo));
 LogicProcessingUnited lpu(.up(up),.down(down),.toOne(toOne),.toTwo(toTwo),.clk_50mhz(clk),.rst(reset),.start_stop(start_stop),.led_drive(led),.state(state),.floor(floor));
+dynamic_led dynamic_led(.floor(floor),.state(state),.clk(clk),.seg(seg),.dig(dig));
+endmodule
