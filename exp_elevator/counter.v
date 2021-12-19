@@ -1,5 +1,0 @@
-module counter(
-    
-);
-
-endmodule
