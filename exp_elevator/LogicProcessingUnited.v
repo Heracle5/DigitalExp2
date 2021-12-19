@@ -35,7 +35,7 @@ begin
             begin
               floor=1;
             end
-            state=0;
+            state=0;//00000010
             led_drive=0;
         end
         else
@@ -48,7 +48,7 @@ begin
     begin
         if(floor!=1)//==2
         begin
-            state=1;
+            state=1;//00010000
             led_drive=4'b0001;
         end
     end
@@ -56,18 +56,18 @@ begin
     begin
         if(floor!=2)
         begin
-            state=2;
+            state=2;//10000000
             led_drive=4'b0010;
         end
     end
-    else if((toOne)&&floor==1)
+    else if((toOne)&&floor==2)
     begin
-        state=2;
+        state=1;//00010000
         led_drive=4'b0100;
     end
-    else if((toTwo)&&floor==2)
+    else if((toTwo)&&floor==1)
     begin
-        state=1;
+        state=2;//10000000
         led_drive=4'b1000;
     end
 end
