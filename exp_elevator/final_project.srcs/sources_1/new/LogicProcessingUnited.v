@@ -74,6 +74,7 @@ begin
             state=1;//00010000
             led_drive=4'b0001;
         end
+        buzzer<=0;
     end
     else if((down)&&(state==0))
     begin
@@ -82,17 +83,20 @@ begin
             state=2;//10000000
             led_drive=4'b0010;
         end
+        buzzer<=0;
     end
     else if((toOne)&&floor==2)
     begin
         state=1;//00010000
         led_drive=4'b0100;
+        buzzer<=0;
     end
     else if((toTwo)&&floor==1)
     begin
         state=2;//10000000
         led_drive=4'b1000;
     end
+    buzzer<=0;
 end
 end
 endmodule
