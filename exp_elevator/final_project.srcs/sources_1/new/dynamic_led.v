@@ -22,7 +22,7 @@
 
 module dynamic_led(
     input[1:0] floor,
-    input[1:0] state,
+    input[3:0] state,
     input clk,
     output reg[7:0] seg,
     output reg[5:0] dig
@@ -45,7 +45,7 @@ reg[3:0] disp_data;
 always@(num) begin
     case(num)
     0:disp_data=floor;
-    1:disp_data=state+3'b011;
+    1:disp_data=state <=2 ? state+3'b011 : state+3'b001;
     default:disp_data=0;
     endcase
     end

@@ -28,7 +28,7 @@ input clk_50mhz,
 input rst,
 input start_stop,
 output reg [3:0] led_drive,
-output reg [1:0] state,
+output reg [3:0] state,
 output reg [1:0] floor,
 output reg buzzer
 );
@@ -48,6 +48,7 @@ end
 else
 begin
     cnt<=cnt+1;
+    state<=3;
 end
 end
 else if(start_stop)

@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module dynamic(input clk,
-input [1:0] state,
+input [3:0] state,
 output reg [4:0] led,
 input start_stop,
 input reset);

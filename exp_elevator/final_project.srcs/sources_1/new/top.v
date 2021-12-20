@@ -38,7 +38,7 @@ wire up;
 wire down;
 wire toOne;
 wire toTwo;
-wire [1:0] state;
+wire [3:0] state;
 wire [1:0] floor;
 clk_div clk_div(.clk_in(clk),.clk_out_1khz(clk_1k),.clk_out_50hz(clk_50),.clk_out_25hz(clk_1));
 key_scanning key_scanning(.col(col),.clk(clk),.btn(btn),.row(row));
