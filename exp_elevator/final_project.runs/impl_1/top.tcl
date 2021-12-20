@@ -66,16 +66,15 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 2
-  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7a35tftg256-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir C:/Users/Chris/Documents/p1/final_project/final_project.cache/wt [current_project]
-  set_property parent.project_path C:/Users/Chris/Documents/p1/final_project/final_project.xpr [current_project]
-  set_property ip_output_repo C:/Users/Chris/Documents/p1/final_project/final_project.cache/ip [current_project]
+  set_property webtalk.parent_dir D:/Develop/FPGA/DigitalExp2/exp_elevator/final_project.cache/wt [current_project]
+  set_property parent.project_path D:/Develop/FPGA/DigitalExp2/exp_elevator/final_project.xpr [current_project]
+  set_property ip_output_repo D:/Develop/FPGA/DigitalExp2/exp_elevator/final_project.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet C:/Users/Chris/Documents/p1/final_project/final_project.runs/synth_1/top.dcp
-  read_xdc C:/Users/Chris/Documents/p1/final_project/final_project.srcs/constrs_1/new/123.xdc
+  add_files -quiet D:/Develop/FPGA/DigitalExp2/exp_elevator/final_project.runs/synth_1/top.dcp
+  read_xdc D:/Develop/FPGA/DigitalExp2/exp_elevator/final_project.srcs/constrs_1/new/123.xdc
   link_design -top top -part xc7a35tftg256-1
   close_msg_db -file init_design.pb
 } RESULT]

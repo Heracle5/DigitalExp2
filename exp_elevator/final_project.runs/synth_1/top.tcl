@@ -18,25 +18,24 @@ proc create_report { reportName command } {
   }
 }
 set_param chipscope.maxJobs 2
-set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a35tftg256-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Users/Chris/Documents/p1/final_project/final_project.cache/wt [current_project]
-set_property parent.project_path C:/Users/Chris/Documents/p1/final_project/final_project.xpr [current_project]
+set_property webtalk.parent_dir D:/Develop/FPGA/DigitalExp2/exp_elevator/final_project.cache/wt [current_project]
+set_property parent.project_path D:/Develop/FPGA/DigitalExp2/exp_elevator/final_project.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo c:/Users/Chris/Documents/p1/final_project/final_project.cache/ip [current_project]
+set_property ip_output_repo d:/Develop/FPGA/DigitalExp2/exp_elevator/final_project.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
-  C:/Users/Chris/Documents/p1/final_project/final_project.srcs/sources_1/new/LogicProcessingUnited.v
-  C:/Users/Chris/Documents/p1/final_project/final_project.srcs/sources_1/new/ajxd.v
-  C:/Users/Chris/Documents/p1/final_project/final_project.srcs/sources_1/new/div_clk.v
-  C:/Users/Chris/Documents/p1/final_project/final_project.srcs/sources_1/new/dynamic_led.v
-  C:/Users/Chris/Documents/p1/final_project/final_project.srcs/sources_1/new/key_scanning.v
-  C:/Users/Chris/Documents/p1/final_project/final_project.srcs/sources_1/new/top.v
+  D:/Develop/FPGA/DigitalExp2/exp_elevator/final_project.srcs/sources_1/new/LogicProcessingUnited.v
+  D:/Develop/FPGA/DigitalExp2/exp_elevator/final_project.srcs/sources_1/new/ajxd.v
+  D:/Develop/FPGA/DigitalExp2/exp_elevator/final_project.srcs/sources_1/new/div_clk.v
+  D:/Develop/FPGA/DigitalExp2/exp_elevator/final_project.srcs/sources_1/new/dynamic_led.v
+  D:/Develop/FPGA/DigitalExp2/exp_elevator/final_project.srcs/sources_1/new/key_scanning.v
+  D:/Develop/FPGA/DigitalExp2/exp_elevator/final_project.srcs/sources_1/new/top.v
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -46,8 +45,8 @@ read_verilog -library xil_defaultlib {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/Chris/Documents/p1/final_project/final_project.srcs/constrs_1/new/123.xdc
-set_property used_in_implementation false [get_files C:/Users/Chris/Documents/p1/final_project/final_project.srcs/constrs_1/new/123.xdc]
+read_xdc D:/Develop/FPGA/DigitalExp2/exp_elevator/final_project.srcs/constrs_1/new/123.xdc
+set_property used_in_implementation false [get_files D:/Develop/FPGA/DigitalExp2/exp_elevator/final_project.srcs/constrs_1/new/123.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

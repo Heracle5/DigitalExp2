@@ -27,7 +27,7 @@ input [3:0] col,
 output [3:0] row,
 output[3:0] led,
 output[5:0] dig,
-output[7:0] seg
+output[7:0] seg,
 output buzzer);
 wire clk_1k;
 wire clk_50;

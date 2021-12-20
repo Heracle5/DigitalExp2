@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:C:/Users/Chris/Documents/p1/final_project/final_project.srcs/constrs_1/new/123.xdc rfile:../../../final_project.srcs/constrs_1/new/123.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:D:/Develop/FPGA/DigitalExp2/exp_elevator/final_project.srcs/constrs_1/new/123.xdc rfile:../../../final_project.srcs/constrs_1/new/123.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:1 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN R12 [get_ports {col[0]}]
 set_property src_info {type:XDC file:1 line:6 export:INPUT save:INPUT read:READ} [current_design]
@@ -57,3 +57,5 @@ set_property src_info {type:XDC file:1 line:58 export:INPUT save:INPUT read:READ
 set_property PACKAGE_PIN T8 [get_ports reset]
 set_property src_info {type:XDC file:1 line:59 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN T9 [get_ports start_stop]
+set_property src_info {type:XDC file:1 line:63 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN L2 [get_ports buzzer]
