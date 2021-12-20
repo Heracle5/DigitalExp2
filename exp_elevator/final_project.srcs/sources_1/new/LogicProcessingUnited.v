@@ -67,7 +67,7 @@ begin
             buzzer=0;
         end
     end
-    else if((up)&&(state==0))//floor==1
+    else if((down)&&(state==0))//floor==1
     begin
         if(floor!=1)//==2
         begin
@@ -75,7 +75,7 @@ begin
             led_drive=4'b0001;
         end
     end
-    else if((down)&&(state==0))
+    else if((up)&&(state==0))
     begin
         if(floor!=2)
         begin
