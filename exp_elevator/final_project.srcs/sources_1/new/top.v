@@ -28,7 +28,8 @@ output [3:0] row,
 output[3:0] led,
 output[5:0] dig,
 output[7:0] seg,
-output buzzer);
+output buzzer,
+output[4:0] shinyled);
 wire clk_1k;
 wire clk_50;
 wire [3:0] btn;
@@ -46,4 +47,5 @@ ajxd ajxd3(.btn_clk(clk_50),.btn_in(btn[2]),.btn_out(toOne));
 ajxd ajxd4(.btn_clk(clk_50),.btn_in(btn[3]),.btn_out(toTwo));
 LogicProcessingUnited lpu(.up(up),.down(down),.toOne(toOne),.toTwo(toTwo),.clk_50mhz(clk),.rst(reset),.start_stop(start_stop),.led_drive(led),.state(state),.floor(floor),.buzzer(buzzer));
 dynamic_led dynamic_led(.floor(floor),.state(state),.clk(clk_1k),.seg(seg),.dig(dig));
+dynamic dynamic(.clk(clk),.state(state),.led(shinyled));
 endmodule

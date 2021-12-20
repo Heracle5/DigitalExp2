@@ -34,6 +34,7 @@ read_verilog -library xil_defaultlib {
   D:/Develop/FPGA/DigitalExp2/exp_elevator/final_project.srcs/sources_1/new/LogicProcessingUnited.v
   D:/Develop/FPGA/DigitalExp2/exp_elevator/final_project.srcs/sources_1/new/ajxd.v
   D:/Develop/FPGA/DigitalExp2/exp_elevator/final_project.srcs/sources_1/new/div_clk.v
+  D:/Develop/FPGA/DigitalExp2/exp_elevator/final_project.srcs/sources_1/new/dynamic.v
   D:/Develop/FPGA/DigitalExp2/exp_elevator/final_project.srcs/sources_1/new/dynamic_led.v
   D:/Develop/FPGA/DigitalExp2/exp_elevator/final_project.srcs/sources_1/new/key_scanning.v
   D:/Develop/FPGA/DigitalExp2/exp_elevator/final_project.srcs/sources_1/new/top.v
