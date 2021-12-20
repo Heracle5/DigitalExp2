@@ -65,6 +65,26 @@ begin
         begin
             cnt=cnt+1;
             buzzer=0;
+            if((state==1)&&(toOne))
+            begin
+            led_drive=led_drive+4'b0100;
+            flag=1;
+            end
+            else if((state==1)&&(up))
+            begin
+            led_drive=led_drive+4'b0010;
+            flag=1//下行
+            end
+            else if((state==2)&&(toTwo))
+            begin
+            led_drive=led_drive+4'b1000;
+            flag=2
+            end
+            else if((state==2)&&(down))
+            begin
+            led_drive=led_drive+4'b0001;
+            flag=2;
+            end
         end
     end
     else if((down)&&(state==0))//floor==1
@@ -92,6 +112,18 @@ begin
     begin
         state=2;//10000000
         led_drive=4'b1000;
+    end
+    else if(flag==1)
+    begin
+      flag=0;
+      state=2;
+      led_drive=led_drive-4'b1000;
+    end
+    else if(flag==2)
+    begin
+      flag=0;
+      state=1;
+      led_drive=led_drive-4'b0100;
     end
 end
 end
