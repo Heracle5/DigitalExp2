@@ -33,6 +33,9 @@ output reg [1:0] state,
 output reg [1:0] floor,
 output reg buzzer
 );
+reg tone_en;
+reg time_cnt;
+parameter time_end=16'd6073;
 reg [31:0] cnt=0;
 always@(posedge clk_50mhz)
 begin
@@ -59,12 +62,12 @@ begin
             end
             state=0;//00000010
             led_drive=0;
-            buzzer<=1;
+            tone_en<=1;
         end
         else
         begin
             cnt=cnt+1;
-            buzzer<=0;
+            tone_en<=0;
         end
     end
     else if((up)&&(state==0))//floor==1
@@ -94,5 +97,25 @@ begin
         led_drive=4'b1000;
     end
 end
+end
+always@(posedge clk_50mhz or negedge rst) begin
+	if(!rst) begin
+		time_cnt <= 1'b0;
+	end else if(!tone_en) begin
+		time_cnt <= 1'b0;
+	end else if(time_cnt>=time_end) begin
+		time_cnt <= 1'b0;
+	end else begin
+		time_cnt <= time_cnt + 1'b1;
+	end
+end
+always@(posedge clk_50mhz or negedge rst) begin
+	if(!rst) begin
+		buzzer <= 1'b0;
+	end else if(time_cnt==time_end) begin
+		buzzer <= ~buzzer;	//蜂鸣器控制输出翻转，两次翻转为1Hz
+	end else begin
+		buzzer <= buzzer;
+	end
 end
 endmodule
