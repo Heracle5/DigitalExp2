@@ -38,9 +38,17 @@ always@(posedge clk_50mhz)
 begin
 if(!rst)
 begin
+if(cnt==199999999)
+begin   
+    cnt<=0;
 led_drive<=0;
 state<=0;
 floor<=1;
+end
+else
+begin
+    cnt<=cnt+1;
+end
 end
 else if(start_stop)
 begin
@@ -73,7 +81,7 @@ end
 else if((led_drive==4'b1000)&&(down))
 begin
 led_drive=4'b1001;
-flag=2;//ÏÂÐÐ
+flag=2;//ï¿½ï¿½ï¿½ï¿½
 end
 else if((led_drive==4'b0100)&&(toTwo))
 begin
