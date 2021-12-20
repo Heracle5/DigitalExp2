@@ -30,7 +30,8 @@ input rst,
 input start_stop,
 output reg [3:0] led_drive,
 output reg [1:0] state,
-output reg [1:0] floor
+output reg [1:0] floor,
+output reg buzzer
 );
 reg [31:0] cnt=0;
 always@(posedge clk_50mhz)
@@ -58,10 +59,12 @@ begin
             end
             state=0;//00000010
             led_drive=0;
+            buzzer<=1;
         end
         else
         begin
             cnt=cnt+1;
+            buzzer<=0;
         end
     end
     else if((up)&&(state==0))//floor==1
