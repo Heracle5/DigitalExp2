@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Mon Dec 20 09:27:35 2021
+| Date         : Mon Dec 20 10:16:07 2021
 | Host         : DESKTOP-QMBGBBR running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
 | Design       : top
@@ -78,8 +78,8 @@ Table of Contents
 |  clk_IBUF_BUFG              | lpu/led_drive[3]_i_1_n_0 |                        |                2 |              4 |
 |  clk_div/clk_out_50hz       |                          |                        |                3 |              8 |
 |  clk_IBUF_BUFG              |                          |                        |                9 |             12 |
-|  clk_IBUF_BUFG              |                          | clk_div/clk_out_50hz_0 |                6 |             24 |
 |  clk_IBUF_BUFG              |                          | clk_div/clk_out_1khz   |                6 |             24 |
+|  clk_IBUF_BUFG              |                          | clk_div/clk_out_50hz_0 |                6 |             24 |
 |  clk_IBUF_BUFG              | lpu/buzzer1_out          |                        |                8 |             32 |
 +-----------------------------+--------------------------+------------------------+------------------+----------------+
 
