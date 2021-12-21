@@ -1,23 +1,22 @@
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company:
-// Engineer:
-//
-// Create Date: 2021/12/20 15:01:26
-// Design Name:
-// Module Name: dynamic
-// Project Name:
-// Target Devices:
-// Tool Versions:
-// Description:
-//
-// Dependencies:
-//
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-//
-//////////////////////////////////////////////////////////////////////////////////
+//for div_clk dynamic and buzzer
+module();
+endmodule
+
+
+
+
+
+//div_clk to 0.94s f=1/0.94=1.08hz,50M/1.08*2=?
+always @ (posedge clk_in)
+begin
+if (clk_div_cnt_3==24999999)//change the number to 50M/1.08*2
+begin
+clk_out_25hz=~clk_out_25hz;
+clk_div_cnt_3=0;
+end
+else
+clk_div_cnt_3=clk_div_cnt_3+1'b1;
+end
 
 module dynamic(input clk,
 input [3:0] state,
