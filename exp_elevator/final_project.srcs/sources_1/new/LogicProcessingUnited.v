@@ -34,21 +34,23 @@ output reg buzzer
 );
 reg [3:0] flag=0;
 reg [31:0] cnt=0;
+reg [31:0] count=0;
 always@(posedge clk_50mhz)
 begin
 if(!rst)
 begin
-if(cnt==199999999)
+if(count==199999999)
 begin   
+    count<=0;
     cnt<=0;
 led_drive<=0;
-state<=0;
+state=0;
 floor<=1;
 end
 else
 begin
-    cnt<=cnt+1;
-    state<=3;
+    count<=count+1;
+    state=3;
 end
 end
 else if(start_stop)

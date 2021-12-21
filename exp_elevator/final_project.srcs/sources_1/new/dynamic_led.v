@@ -45,7 +45,7 @@ reg[3:0] disp_data;
 always@(num) begin
     case(num)
     0:disp_data=floor;
-    1:disp_data=state <=2 ? state+3'b011 : state+3'b001;
+    1:disp_data=state <=2 ? state+3'b011 : floor==1? state+3'b000:state+3'b001;
     default:disp_data=0;
     endcase
     end
