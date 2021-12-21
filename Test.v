@@ -17,80 +17,102 @@ end
 else
 clk_div_cnt_3=clk_div_cnt_3+1'b1;
 end
-
+//state==2 上行 state==1 下行 state==3 reset
 module dynamic(input clk,
 input [3:0] state,
 output reg [4:0] led,
 input start_stop,
-input reset);
+input reset,
+input [1:0] floor);
 //运行时间总共有4s，也即有1hz的时钟5个时钟上升沿，为了避免最后一个时钟上升沿无法检测到，将时钟周期略微缩小，T=4/4.25=0.94s
 reg[1:0] flag=2;
-reg[5:0] state_reg;
-always@(posedge clk)
+reg[5:0] state_reg=0;
+always@(posedge clk)//0.94s
 begin
-if(!reset)
+if((state==3)&&(floor==2))
 begin
-state_reg <= 0;
-led=5'b00000;
+flag<=2;//欲下行
+end
+else if((state==3)&&(floor==1))
+begin
+flag<=3;//岿然不动，坚定不移，我继续担任共和国主席
 end
 else if(start_stop)
 begin
-if((state==0)&(flag==1))
+if(state==1)
 begin
-led = 5'b00001;
-end
-else if((state==0)&(flag==2))
-begin
-led= 5'b10000;
+  flag<=1;//欲上行
 end
 else if(state==2)
 begin
-if(state_reg==0)
+  flag<=2
+end
+else
 begin
-led=5'b01000;
-state_reg=1;
+  flag<=3;
 end
-else if(state_reg==1)
+end
+always@(posedge clk)
 begin
-led=5'b00100;
-state_reg=2;
-end
-else if(state_reg==2)
-begin
-led=5'b00010;
-state_reg=3;
-end
-else if(state_reg==3)
-begin
-led=5'b00001;
-state_reg=0;
-flag=1;
-end
-end
-else if(state==1)
-begin
-if(state_reg==0)
-begin
-led=5'b00010;
-state_reg=1;
-end
-else if(state_reg==1)
-begin
-led=5'b00100;
-state_reg=2;
-end
-else if(state_reg==2)
-begin
-led=5'b01000;
-state_reg=3;
-end
-else if(state_reg==3)
-begin
-led=5'b10000;
-state_reg=0;
-flag=2;
-end
-end
-end
+  if(flag==1)
+  begin
+      if(state_reg==0)
+      begin
+        led<=5'b10000;
+        state_reg<=1;
+      end
+      else if(state_reg==1)
+      begin
+        led<=5'b01000;
+        state_reg<=2;
+      end
+      else if(state_reg==2)
+      begin
+        led<=5'b00100;
+        state_reg<=3;
+      end
+      else if(state_reg==3)
+      begin
+        led<=5'b00010;
+        state_reg<=4;
+      end
+      else if(state_reg==4)
+      begin
+        led<=5'b00001;
+        state_reg<=0;
+      end
+  end
+  else if(flag==2)
+  begin
+    if(state_reg==0)
+      begin
+        led<=5'b00001;
+        state_reg<=1;
+      end
+      else if(state_reg==1)
+      begin
+        led<=5'b00010;
+        state_reg<=2;
+      end
+      else if(state_reg==2)
+      begin
+        led<=5'b00100;
+        state_reg<=3;
+      end
+      else if(state_reg==3)
+      begin
+        led<=5'b01000;
+        state_reg<=4;
+      end
+      else if(state_reg==4)
+      begin
+        led<=5'b10000;
+        state_reg<=0;
+      end
+  end
+  else if(flag==3)
+  begin
+    led<=5'b00000;
+  end
 end
 endmodule
