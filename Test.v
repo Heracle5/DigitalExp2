@@ -37,6 +37,10 @@ else if((state==3)&&(floor==1))
 begin
 flag<=3;//岿然不动，坚定不移，我继续担任共和国主席
 end
+else if(!start_stop)
+begin
+  state_reg=state_reg;
+end
 else if(start_stop)
 begin
 if(state==1)
@@ -116,3 +120,168 @@ begin
   end
 end
 endmodule
+
+//delete the buzzer,add another point to point out the state
+module LogicProcessingUnited(
+input up,
+input down,
+input toOne,
+input toTwo,
+input clk_50mhz,
+input rst,
+input start_stop,
+output reg [3:0] led_drive,
+output reg [3:0] state,
+output reg [1:0] floor,
+output reg point
+);
+reg [3:0] flag=0;
+reg [31:0] cnt=0;
+always@(posedge clk_50mhz)
+begin
+if(!rst)
+begin
+if(cnt==199999999)
+begin   
+    cnt<=0;
+led_drive<=0;
+state<=0;
+floor<=1;
+end
+else
+begin
+    cnt<=cnt+1;
+    state<=3;
+end
+end
+else if(start_stop)
+begin
+if(led_drive)
+begin
+if(cnt==199999999)
+begin
+cnt<=0;
+if(floor==1)
+begin
+floor=2;
+end
+else
+begin
+floor=1;
+end
+state=0;//00000010
+led_drive=0;
+point=1;
+end
+else
+begin
+cnt=cnt+1;
+point=0;
+if((led_drive==4'b1000)&&(toOne))
+begin
+led_drive=4'b1100;
+flag=1;
+end
+else if((led_drive==4'b1000)&&(down))
+begin
+led_drive=4'b1001;
+flag=2;//����
+end
+else if((led_drive==4'b0100)&&(toTwo))
+begin
+led_drive=4'b1100;
+flag=3;
+end
+else if((led_drive==4'b0100)&&(up))
+begin
+led_drive=4'b0110;
+flag=4;
+end
+end
+end
+else if((down)&&(state==0))//floor==1
+begin
+if(floor!=1)//==2
+begin
+state=1;//00010000
+led_drive=4'b0001;
+end
+end
+else if((up)&&(state==0))
+begin
+if(floor!=2)
+begin
+state=2;//10000000
+led_drive=4'b0010;
+end
+end
+else if((toOne)&&floor==2)
+begin
+state=1;//00010000
+led_drive=4'b0100;
+end
+else if((toTwo)&&floor==1)
+begin
+state=2;//10000000
+led_drive=4'b1000;
+end
+else if(flag==1)
+begin
+flag=0;
+state=1;
+led_drive=4'b0100;
+end
+else if(flag==2)
+begin
+flag=0;
+state=1;
+led_drive=4'b0001;
+end
+else if(flag==3)
+begin
+flag=0;
+state=2;
+led_drive=4'b1000;
+end
+else if(flag==4)
+begin
+flag=0;
+state=2;
+led_drive=4'b0010;
+end
+end
+end
+endmodule
+
+//
+module beep(
+input point,
+input clk,//50Mhz
+output reg buzzer
+);
+reg[31:0] cnt;
+always@(posedge clk)
+begin
+  if(point==0)
+  begin
+    buzzer=0;
+  end
+  else if(point==1)
+  begin
+    if((cnt<2499999)&(cnt & 1'b1==1))
+    begin
+        buzzer<=1;
+        cnt=cnt+1;
+    end
+    else if(cnt & 1'b1==0)
+    begin
+      buzzer<=0;
+      cnt=cnt+1;
+    end
+    else if(cnt==2499999)
+    begin
+      cnt=0;
+    end
+    end
+  end
+end
