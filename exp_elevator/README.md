@@ -28,5 +28,13 @@
 
 ## 8、尚有缺陷的有：
 * 复位后经过4s返回floor1，只设定了在floor2复位的情况（下行4s），未设定在floor1复位的相关情况（待机4s）
+
 * 蜂鸣器发声模块PWM信号的设定
+
 * 流水灯的时间间隙的设定（在start_stop后有可能会错过触发沿） 
+
+  
+
+## 9、RTL截图
+
+![image-20211222231721302](C:\Users\Chris\AppData\Roaming\Typora\typora-user-images\image-20211222231721302.png)
